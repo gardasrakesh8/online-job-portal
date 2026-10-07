@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>JobFinder - Online Job Portal</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         NAVIGATION BAR
+    ========================================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                JobFinder
+            </div>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#jobs">Jobs</a>
+                </li>
+
+                <li>
+                    <a href="#companies">Companies</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+
+            <button
+    class="login-btn"
+    onclick="openLogin()"
+>
+    Login
+</button>
+        </nav>
+
+    </header>
+
+
+
+    <!-- ========================================
+         HOME SECTION
+    ========================================= -->
+
+    <section id="home" class="hero">
+
+
+        <div class="hero-content">
+
+
+            <h1>
+                Find Your Dream Job
+            </h1>
+
+
+            <p>
+                Search thousands of jobs and find the right
+                opportunity for your career.
+            </p>
+
+
+
+            <!-- ========================================
+                 SEARCH AND FILTER SECTION
+            ========================================= -->
+
+            <div class="search-section">
+
+
+                <div class="search-box">
+
+
+                    <!-- Job Search -->
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Job title or company"
+                    >
+
+
+
+                    <!-- Location -->
+
+                    <input
+                        type="text"
+                        id="locationInput"
+                        placeholder="Location"
+                    >
+
+
+
+                    <!-- Category -->
+
+                    <select id="categoryFilter">
+
+                        <option value="">
+                            All Categories
+                        </option>
+
+                        <option value="Web Development">
+                            Web Development
+                        </option>
+
+                        <option value="Python">
+                            Python
+                        </option>
+
+                        <option value="Data Analytics">
+                            Data Analytics
+                        </option>
+
+                        <option value="Software Development">
+                            Software Development
+                        </option>
+
+                    </select>
+
+
+
+                    <!-- Job Type -->
+
+                    <select id="jobTypeFilter">
+
+                        <option value="">
+                            All Job Types
+                        </option>
+
+                        <option value="Full Time">
+                            Full Time
+                        </option>
+
+                        <option value="Part Time">
+                            Part Time
+                        </option>
+
+                        <option value="Internship">
+                            Internship
+                        </option>
+
+                    </select>
+
+
+
+                    <!-- Search Button -->
+
+                    <button onclick="searchJobs()">
+                        Search Jobs
+                    </button>
+
+
+
+                    <!-- Clear Button -->
+
+                    <button
+                        class="clear-btn"
+                        onclick="clearFilters()"
+                    >
+                        Clear
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         JOBS SECTION
+    ========================================= -->
+
+    <section id="jobs" class="jobs-section">
+
+
+        <h2>
+            Latest Jobs
+        </h2>
+
+
+        <!--
+            JavaScript will create
+            job cards inside this container
+        -->
+
+        <div
+            id="jobContainer"
+            class="job-container"
+        >
+
+            <!-- Jobs will be added using JavaScript -->
+
+        </div>
+
+
+    </section>
+
+
+
+   <!-- ========================================
+     JOB DETAILS SECTION
+     STAGE 3
+========================================= -->
+
+<section
+    id="jobDetails"
+    class="job-details"
+>
+
+    <div id="jobDetailsContainer">
+
+        <!--
+            Job details will appear here
+            when user clicks "View Details"
+        -->
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     APPLICATION FORM SECTION
+     STAGE 4
+========================================= -->
+
+<section
+    id="applicationSection"
+    class="application-section"
+>
+
+
+    <div class="application-container">
+
+
+        <h2>
+            Apply for Job
+        </h2>
+
+
+        <p id="selectedJob">
+            <!-- Selected job name will appear here -->
+        </p>
+
+
+
+        <!-- APPLICATION FORM -->
+
+        <form
+            id="applicationForm"
+            onsubmit="submitApplication(event)"
+        >
+
+
+            <!-- FULL NAME -->
+
+            <label for="applicantName">
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="applicantName"
+                placeholder="Enter your full name"
+                required
+            >
+
+
+
+            <!-- EMAIL -->
+
+            <label for="applicantEmail">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="applicantEmail"
+                placeholder="Enter your email"
+                required
+            >
+
+
+
+            <!-- PHONE -->
+
+            <label for="applicantPhone">
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="applicantPhone"
+                placeholder="Enter your phone number"
+                required
+            >
+
+
+
+            <!-- RESUME -->
+
+            <label for="resume">
+                Upload Resume
+            </label>
+
+            <input
+                type="file"
+                id="resume"
+                accept=".pdf,.doc,.docx"
+                required
+            >
+
+
+
+            <!-- COVER LETTER -->
+
+            <label for="coverLetter">
+                Cover Letter
+            </label>
+
+            <textarea
+                id="coverLetter"
+                rows="6"
+                placeholder="Write a short cover letter..."
+                required
+            ></textarea>
+
+
+
+            <!-- SUBMIT BUTTON -->
+
+            <button
+                type="submit"
+                class="submit-application-btn"
+            >
+                Submit Application
+            </button>
+
+
+        </form>
+
+
+
+        <!-- SUCCESS MESSAGE -->
+
+        <div
+            id="applicationSuccess"
+            class="application-success"
+        >
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+    <!-- ========================================
+         COMPANIES SECTION
+    ========================================= -->
+
+    <section
+        id="companies"
+        class="companies"
+    >
+
+
+        <h2>
+            Top Companies
+        </h2>
+
+
+        <div class="company-container">
+
+
+            <div class="company-card">
+
+                <h3>
+                    Google
+                </h3>
+
+                <p>
+                    Technology
+                </p>
+
+            </div>
+
+
+
+            <div class="company-card">
+
+                <h3>
+                    Microsoft
+                </h3>
+
+                <p>
+                    Technology
+                </p>
+
+            </div>
+
+
+
+            <div class="company-card">
+
+                <h3>
+                    Amazon
+                </h3>
+
+                <p>
+                    E-Commerce
+                </p>
+
+            </div>
+
+
+
+            <div class="company-card">
+
+                <h3>
+                    TCS
+                </h3>
+
+                <p>
+                    IT Services
+                </p>
+
+            </div>
+
+
+
+            <div class="company-card">
+
+                <h3>
+                    Infosys
+                </h3>
+
+                <p>
+                    IT Services
+                </p>
+
+            </div>
+
+
+
+            <div class="company-card">
+
+                <h3>
+                    Accenture
+                </h3>
+
+                <p>
+                    Consulting
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ========================================
+         ABOUT SECTION
+    ========================================= -->
+
+    <section
+        id="about"
+        class="about"
+    >
+
+
+        <h2>
+            About JobFinder
+        </h2>
+
+
+        <p>
+
+            JobFinder is an online job search portal
+            designed to help job seekers discover
+            suitable career opportunities.
+
+            Users can search for jobs based on
+            job title, company, location, category,
+            and job type.
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- ========================================
+         CONTACT SECTION
+    ========================================= -->
+
+    <section
+        id="contact"
+        class="contact"
+    >
+
+
+        <h2>
+            Contact Us
+        </h2>
+
+
+        <p>
+            Email:
+            gardasrakesh8@gmail.com
+        </p>
+
+
+        <p>
+            Phone:
+            +91 9390970857
+        </p>
+
+
+        <p>
+            Location:
+            Hyderabad, India
+        </p>
+
+
+    </section>
+
+
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+
+        <p>
+            © 2026 JobFinder.
+            All Rights Reserved.
+        </p>
+
+
+    </footer>
+
+
+
+   <!-- ========================================
+     LOGIN / REGISTER MODAL
+     STAGE 5
+========================================= -->
+
+<div
+    id="authModal"
+    class="auth-modal"
+>
+
+
+    <div class="auth-container">
+
+
+        <!-- CLOSE BUTTON -->
+
+        <button
+            class="close-btn"
+            onclick="closeAuth()"
+        >
+            ×
+        </button>
+
+
+
+        <!-- LOGIN FORM -->
+
+        <div id="loginForm">
+
+
+            <h2>
+                Login
+            </h2>
+
+
+            <p class="auth-subtitle">
+                Login to your JobFinder account
+            </p>
+
+
+
+            <!-- EMAIL -->
+
+            <label for="loginEmail">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Enter your email"
+            >
+
+
+
+            <!-- PASSWORD -->
+
+            <label for="loginPassword">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter your password"
+            >
+
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button
+                class="auth-btn"
+                onclick="loginUser()"
+            >
+                Login
+            </button>
+
+
+
+            <!-- REGISTER LINK -->
+
+            <p class="switch-auth">
+
+                Don't have an account?
+
+                <span onclick="showRegister()">
+                    Register
+                </span>
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- REGISTER FORM -->
+
+        <div
+            id="registerForm"
+            style="display: none;"
+        >
+
+
+            <h2>
+                Create Account
+            </h2>
+
+
+            <p class="auth-subtitle">
+                Register for a new JobFinder account
+            </p>
+
+
+
+            <!-- FULL NAME -->
+
+            <label for="registerName">
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="registerName"
+                placeholder="Enter your full name"
+            >
+
+
+
+            <!-- EMAIL -->
+
+            <label for="registerEmail">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="registerEmail"
+                placeholder="Enter your email"
+            >
+
+
+
+            <!-- PASSWORD -->
+
+            <label for="registerPassword">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Create a password"
+            >
+
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <label for="confirmPassword">
+                Confirm Password
+            </label>
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm your password"
+            >
+
+
+
+            <!-- REGISTER BUTTON -->
+
+            <button
+                class="auth-btn"
+                onclick="registerUser()"
+            >
+                Register
+            </button>
+
+
+
+            <!-- LOGIN LINK -->
+
+            <p class="switch-auth">
+
+                Already have an account?
+
+                <span onclick="showLogin()">
+                    Login
+                </span>
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ========================================
+     JAVASCRIPT FILE
+========================================= -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

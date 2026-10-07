@@ -1,0 +1,1184 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: #f5f7fa;
+
+    color: #333;
+}
+
+
+/* ========================================
+   2. NAVIGATION BAR
+======================================== */
+
+.navbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 8%;
+
+    background-color: white;
+
+    box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.logo {
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #2563eb;
+
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    list-style: none;
+
+    gap: 25px;
+
+}
+
+
+.nav-links a {
+
+    text-decoration: none;
+
+    color: #333;
+
+    font-weight: 500;
+
+}
+
+
+.nav-links a:hover {
+
+    color: #2563eb;
+
+}
+
+
+.login-btn {
+
+    padding: 10px 20px;
+
+    border: none;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+.login-btn:hover {
+
+    background-color: #1d4ed8;
+
+}
+
+
+/* ========================================
+   3. HERO SECTION
+======================================== */
+
+.hero {
+
+    min-height: 450px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    color: white;
+
+    padding: 50px 20px;
+
+}
+
+
+.hero-content {
+
+    width: 100%;
+
+}
+
+
+.hero-content h1 {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.hero-content p {
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* ========================================
+   4. SEARCH SECTION
+======================================== */
+
+.search-section {
+
+    width: 100%;
+
+}
+
+
+.search-box {
+
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.15);
+
+}
+
+
+/* Search inputs */
+
+.search-box input,
+.search-box select {
+
+    padding: 14px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    min-width: 180px;
+
+    outline: none;
+
+}
+
+
+.search-box input:focus,
+.search-box select:focus {
+
+    border-color: #2563eb;
+
+}
+
+
+/* ========================================
+   5. SEARCH BUTTON
+======================================== */
+
+.search-box button {
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #16a34a;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+}
+
+
+.search-box button:hover {
+
+    background-color: #15803d;
+
+}
+
+
+/* ========================================
+   6. CLEAR BUTTON
+======================================== */
+
+.search-box .clear-btn {
+
+    background-color: #dc2626;
+
+}
+
+
+.search-box .clear-btn:hover {
+
+    background-color: #b91c1c;
+
+}
+
+
+/* ========================================
+   7. JOBS SECTION
+======================================== */
+
+.jobs-section {
+
+    padding: 60px 8%;
+
+}
+
+
+.jobs-section h2,
+.companies h2,
+.about h2,
+.contact h2 {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+
+    font-size: 30px;
+
+}
+
+
+/* ========================================
+   8. JOB CONTAINER
+======================================== */
+
+.job-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
+
+    gap: 25px;
+
+}
+
+
+/* ========================================
+   9. JOB CARD
+======================================== */
+
+.job-card {
+
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+
+}
+
+
+.job-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+
+}
+
+
+.job-card h3 {
+
+    color: #2563eb;
+
+    margin-bottom: 15px;
+
+    font-size: 21px;
+
+}
+
+
+.job-card p {
+
+    margin: 9px 0;
+
+    line-height: 1.5;
+
+}
+
+
+.job-card button {
+
+    margin-top: 15px;
+
+    padding: 10px 18px;
+
+    border: none;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+.job-card button:hover {
+
+    background-color: #1d4ed8;
+
+}
+
+
+/* ========================================
+   10. NO JOBS MESSAGE
+======================================== */
+
+.no-jobs {
+
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 50px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+}
+
+
+.no-jobs h3 {
+
+    margin-bottom: 10px;
+
+    color: #dc2626;
+
+}
+
+
+.no-jobs p {
+
+    color: #666;
+
+}
+
+
+/* ========================================
+   11. JOB DETAILS SECTION
+======================================== */
+
+.job-details {
+
+    display: none;
+
+    padding: 60px 10%;
+
+    background-color: #eef2ff;
+
+}
+
+
+/* Job details box */
+
+#jobDetailsContainer {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    background-color: white;
+
+    padding: 40px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+
+/* Job title */
+
+#jobDetailsContainer h2 {
+
+    color: #2563eb;
+
+    font-size: 32px;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* Details headings */
+
+#jobDetailsContainer h3 {
+
+    margin-top: 25px;
+
+    margin-bottom: 10px;
+
+    color: #333;
+
+}
+
+
+/* ========================================
+   12. JOB INFORMATION
+======================================== */
+
+.details-info {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.details-info p {
+
+    padding: 12px;
+
+    background-color: #f5f7fa;
+
+    border-radius: 6px;
+
+}
+
+
+#jobDetailsContainer p {
+
+    line-height: 1.7;
+
+}
+
+
+/* Requirements list */
+
+#jobDetailsContainer ul {
+
+    padding-left: 25px;
+
+    line-height: 2;
+
+}
+
+
+/* ========================================
+   13. SKILLS
+======================================== */
+
+.skills {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+}
+
+
+.skills span {
+
+    background-color: #dbeafe;
+
+    color: #1d4ed8;
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+}
+
+
+/* ========================================
+   14. APPLY BUTTON
+======================================== */
+
+.apply-btn {
+
+    margin-top: 25px;
+
+    padding: 13px 25px;
+
+    background-color: #16a34a;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+}
+
+
+.apply-btn:hover {
+
+    background-color: #15803d;
+
+}
+
+
+/* ========================================
+   15. COMPANIES SECTION
+======================================== */
+
+.companies {
+
+    padding: 60px 8%;
+
+    background-color: white;
+
+}
+
+
+.company-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(200px, 1fr)
+        );
+
+    gap: 20px;
+
+}
+
+
+.company-card {
+
+    padding: 30px;
+
+    text-align: center;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    transition: 0.2s;
+
+}
+
+
+.company-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+
+}
+
+
+.company-card h3 {
+
+    color: #2563eb;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* ========================================
+   16. ABOUT SECTION
+======================================== */
+
+.about {
+
+    padding: 60px 15%;
+
+    text-align: center;
+
+}
+
+
+.about p {
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ========================================
+   17. CONTACT SECTION
+======================================== */
+
+.contact {
+
+    padding: 60px;
+
+    text-align: center;
+
+    background-color: #eef2ff;
+
+}
+
+
+.contact p {
+
+    margin: 10px;
+
+}
+
+
+/* ========================================
+   18. FOOTER
+======================================== */
+
+footer {
+
+    text-align: center;
+
+    padding: 20px;
+
+    background-color: #111827;
+
+    color: white;
+
+}
+
+
+/* ========================================
+   19. MOBILE RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+
+
+    /* Navigation */
+
+    .navbar {
+
+        flex-direction: column;
+
+        gap: 15px;
+            .auth-container {
+        padding: 25px;
+    }
+
+    .auth-container h2 {
+        font-size: 26px;
+    }
+    .application-section {
+        padding: 40px 20px;
+    }
+
+    .application-container {
+        padding: 25px;
+    }
+
+    .application-container h2 {
+        font-size: 26px;
+    }
+    }
+
+
+    .nav-links {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 10px;
+
+    }
+
+
+    /* Hero */
+
+    .hero-content h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    .hero-content p {
+
+        font-size: 16px;
+
+    }
+
+
+    /* Search */
+
+    .search-box {
+
+        flex-direction: column;
+
+    }
+
+
+    .search-box input,
+    .search-box select {
+
+        width: 100%;
+
+    }
+
+
+    .search-box button {
+
+        width: 100%;
+
+    }
+
+
+    /* Job Details */
+
+    .details-info {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    #jobDetailsContainer {
+
+        padding: 25px;
+
+    }
+
+
+    #jobDetailsContainer h2 {
+
+        font-size: 26px;
+
+    }
+
+
+    /* About */
+
+    .about {
+
+        padding: 50px 8%;
+
+    }
+
+
+    /* Contact */
+
+    .contact {
+
+        padding: 50px 20px;
+
+    }
+
+}
+/* ========================================
+   APPLICATION FORM
+   STAGE 4
+======================================== */
+
+.application-section {
+    display: none;
+    padding: 60px 10%;
+    background-color: #f5f7fa;
+}
+
+
+.application-container {
+    max-width: 700px;
+    margin: auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.application-container h2 {
+    text-align: center;
+    color: #2563eb;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+
+#selectedJob {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+
+/* FORM LABEL */
+
+.application-container label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* FORM INPUTS */
+
+.application-container input,
+.application-container textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+
+.application-container input:focus,
+.application-container textarea:focus {
+    border-color: #2563eb;
+}
+
+
+/* TEXTAREA */
+
+.application-container textarea {
+    resize: vertical;
+}
+
+
+/* SUBMIT BUTTON */
+
+.submit-application-btn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #16a34a;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.submit-application-btn:hover {
+    background-color: #15803d;
+}
+
+
+/* SUCCESS MESSAGE */
+
+.application-success {
+    margin-top: 25px;
+    text-align: center;
+    color: #16a34a;
+}
+
+
+.application-success h3 {
+    margin-bottom: 10px;
+}
+/* ========================================
+   LOGIN / REGISTER
+   STAGE 5
+======================================== */
+
+
+/* AUTH MODAL */
+
+.auth-modal {
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+
+    padding: 20px;
+}
+
+
+
+/* AUTH CONTAINER */
+
+.auth-container {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 450px;
+
+    background-color: white;
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* CLOSE BUTTON */
+
+.close-btn {
+
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 28px;
+
+    color: #555;
+
+    cursor: pointer;
+
+}
+
+
+.close-btn:hover {
+
+    color: #dc2626;
+
+}
+
+
+
+/* AUTH HEADING */
+
+.auth-container h2 {
+
+    text-align: center;
+
+    color: #2563eb;
+
+    margin-bottom: 10px;
+
+    font-size: 30px;
+
+}
+
+
+
+/* AUTH SUBTITLE */
+
+.auth-subtitle {
+
+    text-align: center;
+
+    color: #666;
+
+    margin-bottom: 25px;
+
+}
+
+
+
+/* LABEL */
+
+.auth-container label {
+
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+}
+
+
+
+/* INPUT */
+
+.auth-container input {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+.auth-container input:focus {
+
+    border-color: #2563eb;
+
+}
+
+
+
+/* AUTH BUTTON */
+
+.auth-btn {
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+.auth-btn:hover {
+
+    background-color: #1d4ed8;
+
+}
+
+
+
+/* SWITCH LOGIN / REGISTER */
+
+.switch-auth {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #555;
+
+}
+
+
+.switch-auth span {
+
+    color: #2563eb;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.switch-auth span:hover {
+
+    text-decoration: underline;
+
+}
